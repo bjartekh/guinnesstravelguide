@@ -82,12 +82,12 @@ namespace GuinessTravelGuideSP
             //app.UseFacebookAuthentication(
             //    appId: "",
             //    appSecret: "");
-
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1040210108095-1g1rn01aagfjnjbf2dsd6j6hs0vl7ulb.apps.googleusercontent.com",
+                ClientSecret = "86TExaLAsaY5JgqZw6g_Mdts"
+            });
         }
     }
 }

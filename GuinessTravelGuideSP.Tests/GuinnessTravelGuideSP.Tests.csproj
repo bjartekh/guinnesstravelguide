@@ -100,9 +100,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GuinessTravelGuideSP\GuinessTravelGuideSP.csproj">
+    <ProjectReference Include="..\GuinessTravelGuideSP\GuinnessTravelGuideSP.csproj">
       <Project>{8DA3CDB9-BAEB-4D85-A6CF-14FB65629C2F}</Project>
-      <Name>GuinessTravelGuideSP</Name>
+      <Name>GuinnessTravelGuideSP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

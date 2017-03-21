@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace GuinessTravelGuideSP.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

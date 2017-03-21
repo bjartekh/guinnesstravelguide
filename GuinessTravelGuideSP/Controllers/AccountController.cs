@@ -283,7 +283,7 @@ namespace GuinessTravelGuideSP.Controllers
             return View();
         }
 
-        //
+        // Posted here from view. (when clicking Google-button, then provider=google
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
@@ -329,7 +329,7 @@ namespace GuinessTravelGuideSP.Controllers
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
+        // This is called after /signing-google is executed
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)

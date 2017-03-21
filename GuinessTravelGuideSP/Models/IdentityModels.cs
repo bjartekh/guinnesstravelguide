@@ -31,5 +31,7 @@ namespace GuinessTravelGuideSP.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<GuinessTravelGuideSP.Models.Location> Locations { get; set; }
     }
 }
