@@ -3,12 +3,14 @@
     <h1>Guinness Travel Guide</h1>
     <p class="lead">This is a guide to help you locate your closest guinness place</p>
     <div class="col-lg-4">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="city / country / pub / store...">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Search</button>
-            </span>
-        </div><!-- /input-group -->
+        <form class="form-horizontal" data-bind="submit: searchLocation">
+            <div class="input-group"  data-bind="with: newSearch">
+                <input type="text" id="inputTitle" data-bind="value:Location" class="form-control" placeholder="city / country / pub / store...">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </span>
+            </div><!-- /input-group -->
+        </form>
     </div><br />
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,27 +25,18 @@
     </div>
 </div>
 <div class="row">
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><!-- Title --></td>
-                <td><!-- Year --></td>
-                <td><!-- Rating --></td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="panel-body">
+        <ul class="list-unstyled" data-bind="foreach: Locations">
+            <li>
+                <strong><span data-bind="text: Name"></span></strong>: <span data-bind="text: City"></span>
+                <small><a href="#">Details</a></small>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="row">
-  <h1>Current location:</h1>
-  <div id="map_canvas"></div>
+    <h1>Current location:</h1>
+    <div id="map_canvas"></div>
 </div>
 
 

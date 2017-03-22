@@ -1,31 +1,46 @@
-﻿function HomeViewModel(app, dataModel) {
+﻿var HomeModel = function () {
     var self = this;
+    self.locations = ko.observableArray();
+    self.error = ko.observable();
 
-    self.myHometown = ko.observable("");
+    self.newSearch = {
+        Location : ko.observable()
+    }
 
-    Sammy(function () {
-        this.get('#home', function () {
-            // Make a call to the protected Web API by passing in a Bearer Authorization Header
-            $.ajax({
-                method: 'get',
-                url: app.dataModel.userInfoUrl,
-                contentType: "application/json; charset=utf-8",
-                headers: {
-                    'Authorization': 'Bearer ' + app.dataModel.getAccessToken()
-                },
-                success: function (data) {
-                    self.myHometown('Your Hometown is : ' + data.hometown);
-                }
-            });
+    var findUri = '/api/find/';
+
+    function ajaxHelper(uri, method, data) {
+        self.error(''); // Clear error message
+        return $.ajax({
+            type: method,
+            url: uri,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: data ? JSON.stringify(data) : null
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            self.error(errorThrown);
         });
-        this.get('/', function () { this.app.runRoute('get', '#home') });
-    });
+    }
 
-    return self;
-}
+    function findAllLocations(name) {
+        ajaxHelper(findUri+name, 'GET').done(function (data) {
+            self.locations(data);
+        });
+    }
 
-app.addViewModel({
-    name: "Home",
-    bindingMemberName: "home",
-    factory: HomeViewModel
-});
+    self.searchLocation = function (formElement) {
+        var location = self.newSearch.Location;
+        console.log(location);
+        findAllLocations(location);
+
+    }
+
+
+    // Fetch the initial data.
+    //findAllLocations();
+
+
+
+};
+
+ko.applyBindings(HomeModel);
