@@ -91,3 +91,7 @@ E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\obj\Debug\G
 E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\obj\Debug\GuinessTravelGuideSP.Migrations.InitialCreate.resources
 E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\obj\Debug\GuinnessTravelGuideSP.csproj.GenerateResource.Cache
 E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\obj\Debug\GuinessTravelGuideSP.Migrations.Initial.resources
+E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\bin\Bloodhound.dll
+E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\bin\Speedy.dll
+E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\bin\Bloodhound.pdb
+E:\Development\c#\Projects\GuinessTravelGuideSP\GuinessTravelGuideSP\bin\Speedy.pdb

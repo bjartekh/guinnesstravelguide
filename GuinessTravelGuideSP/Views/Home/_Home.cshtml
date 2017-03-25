@@ -1,13 +1,13 @@
-﻿<!-- ko with: home -->
+﻿<!-- ko with: HomeModel -->
 <div class="jumbotron">
     <h1>Guinness Travel Guide</h1>
     <p class="lead">This is a guide to help you locate your closest guinness place</p>
     <div class="col-lg-4">
         <form class="form-horizontal" data-bind="submit: searchLocation">
-            <div class="input-group"  data-bind="with: newSearch">
-                <input type="text" id="inputTitle" data-bind="value:Location" class="form-control" placeholder="city / country / pub / store...">
+            <div id="custom-templates" class="input-group">
+                <input type="text" id="inputTitle" data-bind="value: searchInput" class="typeahead" placeholder="search...">
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button">Search</button>
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </span>
             </div><!-- /input-group -->
         </form>
@@ -26,10 +26,9 @@
 </div>
 <div class="row">
     <div class="panel-body">
-        <ul class="list-unstyled" data-bind="foreach: Locations">
+        <ul class="list-unstyled" data-bind="foreach: locations">
             <li>
-                <strong><span data-bind="text: Name"></span></strong>: <span data-bind="text: City"></span>
-                <small><a href="#">Details</a></small>
+                <strong><span data-bind="text: name"></span></strong>: <span data-bind="text: city"></span>
             </li>
         </ul>
     </div>

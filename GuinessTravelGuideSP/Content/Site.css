@@ -40,3 +40,17 @@ textarea {
         height: 400px;
         width: 100%;
 }
+
+
+.typeahead{
+    background-color: #fff;
+    min-width: 250px;
+}
+
+.typeahead li{
+    padding: 5px;
+}
+
+.typeahead li.active{
+    background-color: #eee;
+}
